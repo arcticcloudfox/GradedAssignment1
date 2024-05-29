@@ -18,7 +18,8 @@ let candidateAnswers = '';
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-  let candidateName = input.question("Enter name here: ");
+  let name = input.question("Enter name here: ");
+  name.push(candidateName);
 }
 
 function askQuestion() {
@@ -36,43 +37,43 @@ function askQuestion() {
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  //for (let i = 0; i < candidateAnswers.length; i++) {
-    //if (candidateAnswers[i] == correctAnswers[i]) {
-      //candidateAnswers[i].toLowerCase();
-      //console.log(`Correct! Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}.`);
-      //score++;
-    //} else {
-      //console.log(`Incorrect! Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}.`);
-    //}
-    //}
-//for (let i = 0; i < 5; i++) {
-  //if (candidateAnswers[i] == correctAnswers[i]) {
-    //correct = correct + 1;
-    //console.log(`Correct! Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}.`);
-  //} else {
-    //console.log(`Incorrect! Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}.`);
-  //}
-//}
-let grade// = (correct/questions.length) * 100; //TODO 3.2 use this variable to calculate the candidates score.
-//if (correct == 0) {
-  //grade;
-  //console.log("Sorry. You've failed the quiz.");
-//} else if (correct == 5) {
- //grade;
- //console.log(`Congradulations! You've passed with a ${grade}.`);
-//} else if (correct == 1) {
-// grade;
- //console.log(`Sorry. You've failed with a ${grade}.`);
-//} else if (correct == 2) {
- //grade;
- //console.log(`Sorry. You've failed with a ${grade}.`);
-//} else if (correct == 3) {
- //grade;
- //console.log(`Sorry. You've failed with a ${grade}.`);
-//} else if (correct == 4) {
- //grade;
- //console.log(`Congradulations! You've passed with a ${grade}.`);
-//}
+  for (let i = 0; i < candidateAnswers.length; i++) {
+    if (candidateAnswers[i] == correctAnswers[i]) {
+      candidateAnswers[i].toLowerCase();
+      console.log(`Correct! Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}.`);
+      score++;
+    } else {
+      console.log(`Incorrect! Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}.`);
+    }
+    }
+for (let i = 0; i < 5; i++) {
+  if (candidateAnswers[i] == correctAnswers[i]) {
+    correct = correct + 1;
+    console.log(`Correct! Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}.`);
+  } else {
+    console.log(`Incorrect! Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}.`);
+  }
+}
+let grade = (correct/questions.length) * 100; //TODO 3.2 use this variable to calculate the candidates score.
+if (correct == 0) {
+  grade;
+  console.log("Sorry. You've failed the quiz.");
+} else if (correct == 5) {
+ grade;
+ console.log(`Congradulations! You've passed with a ${grade}.`);
+} else if (correct == 1) {
+ grade;
+ console.log(`Sorry. You've failed with a ${grade}.`);
+} else if (correct == 2) {
+ grade;
+ console.log(`Sorry. You've failed with a ${grade}.`);
+} else if (correct == 3) {
+ grade;
+ console.log(`Sorry. You've failed with a ${grade}.`);
+} else if (correct == 4) {
+ grade;
+ console.log(`Congradulations! You've passed with a ${grade}.`);
+}
 return grade;
 }
 

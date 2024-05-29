@@ -27,8 +27,7 @@ function askQuestion() {
   for (let i = 0; i < questions.length; i++) {
     questions = input.question(question[i]);
     input = [];
-    candidateAnswers.toLowerCase();
-    candidateAnswers.push(input);
+    candidateAnswers.toLowerCase().push(input);
   }
 }
 
@@ -44,6 +43,9 @@ function gradeQuiz(candidateAnswers) {
     } else {
       console.log(`Sorry that was wrong. Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}.`);
     }
+  for (let i = 0; i < questions.length; i++) {
+  askQuestion(questions[i]);
+}
     let grade = (score/5) * 100;
     return grade;
   }

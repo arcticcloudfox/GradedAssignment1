@@ -18,34 +18,37 @@ let candidateAnswers = '';
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-  let name = input.question("Enter name here: ");
-  name.push(candidateName);
+  let askName = input.question("Enter name here: ");
+  candidateName = candidateName + askName;
 }
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-
+//let questions = input.question(question[i], "");
   for (let i = 0; i < questions.length; i++) {
-    questions = input.question(question[i]);
-    userInput = [];
-    candidateAnswers.toLowerCase().push(userInput);
+    askQuestions = input.question(questions[i]);
+    candidateAnswers = candidateAnswers + askQuestions;
+    candidateAnswers.split(" ");
+    //candidateAnswers.push(userInput);
   }
+  //for (let i = 0; i < questions.length; i++) {
+    //askQuestion(questions[i]);
+  //}
 }
 
-//let correct = 0;
 
 function gradeQuiz(candidateAnswers) {
-
+let correct = 0;
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  for (let i = 0; i < candidateAnswers.length; i++) {
-    if (candidateAnswers[i] == correctAnswers[i]) {
-      candidateAnswers[i].toLowerCase();
-      console.log(`Correct! Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}.`);
-      score++;
-    } else {
-      console.log(`Incorrect! Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}.`);
-    }
-    }
+  //for (let i = 0; i < candidateAnswers.length; i++) {
+    //if (candidateAnswers[i] == correctAnswers[i]) {
+      //candidateAnswers[i].toLowerCase();
+      //console.log(`Correct! Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}.`);
+      //score++;
+    //} else {
+      //console.log(`Incorrect! Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}.`);
+    //}
+    //}
 for (let i = 0; i < 5; i++) {
   if (candidateAnswers[i] == correctAnswers[i]) {
     correct = correct + 1;
@@ -81,7 +84,7 @@ return grade;
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
-  console.log(`Hello ${candidateName}!`);
+  console.log("Hello " +  candidateName + "!");
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }

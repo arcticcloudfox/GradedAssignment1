@@ -26,35 +26,61 @@ function askQuestion() {
 
   for (let i = 0; i < questions.length; i++) {
     questions = input.question(question[i]);
-    input = [];
-    candidateAnswers.toLowerCase().push(input);
+    userInput = [];
+    candidateAnswers.toLowerCase().push(userInput);
   }
 }
 
-let score = 0;
+//let correct = 0;
+
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-
-  for (let i = 0; i < questions.length; i++) {
-    if (candidateAnswers[i] == correctAnswers[i]) {
-      console.log(`Good job thats correct! Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}.`);
-      score++;
-    } else {
-      console.log(`Sorry that was wrong. Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}.`);
-    }
-    let grade = (score/5) * 100;
-    return grade;
-  }
-  //let grade = (score / questions.length) * 100; //TODO 3.2 use this variable to calculate the candidates score.
-
-
-  //return grade;
+  //for (let i = 0; i < candidateAnswers.length; i++) {
+    //if (candidateAnswers[i] == correctAnswers[i]) {
+      //candidateAnswers[i].toLowerCase();
+      //console.log(`Correct! Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}.`);
+      //score++;
+    //} else {
+      //console.log(`Incorrect! Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}.`);
+    //}
+    //}
+//for (let i = 0; i < 5; i++) {
+  //if (candidateAnswers[i] == correctAnswers[i]) {
+    //correct = correct + 1;
+    //console.log(`Correct! Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}.`);
+  //} else {
+    //console.log(`Incorrect! Your answer: ${candidateAnswers[i]}. Correct answer: ${correctAnswers[i]}.`);
+  //}
+//}
+let grade// = (correct/questions.length) * 100; //TODO 3.2 use this variable to calculate the candidates score.
+//if (correct == 0) {
+  //grade;
+  //console.log("Sorry. You've failed the quiz.");
+//} else if (correct == 5) {
+ //grade;
+ //console.log(`Congradulations! You've passed with a ${grade}.`);
+//} else if (correct == 1) {
+// grade;
+ //console.log(`Sorry. You've failed with a ${grade}.`);
+//} else if (correct == 2) {
+ //grade;
+ //console.log(`Sorry. You've failed with a ${grade}.`);
+//} else if (correct == 3) {
+ //grade;
+ //console.log(`Sorry. You've failed with a ${grade}.`);
+//} else if (correct == 4) {
+ //grade;
+ //console.log(`Congradulations! You've passed with a ${grade}.`);
+//}
+return grade;
 }
+
+
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
-  console.log("Hello" + candidateName + "!");
+  console.log(`Hello ${candidateName}!`);
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
